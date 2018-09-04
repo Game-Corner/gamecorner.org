@@ -1,23 +1,15 @@
 {
-  "name": "gamecornerweb",
-  "version": "0.1",
-  "description": "A web server for the game corner website",
-  "main": "index.js",
-  "dependencies": {
-    "express": "^4.16.2"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Game-Corner/gamecorner.org.git"
-  },
-  "keywords": [
-    "web"
+  "name": "gamecorner.org",
+  "description": "The Game Corner website.",
+  "version": "0.0.2",
+  "contributors": [
+    {
+      "name": "Game Corner Community",
+      "email": "",
+      "web": "https://gamecorner.org"
+    }
   ],
-  "author": "Game Corner Community",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/Game-Corner/gamecorner.org/issues"
-  },
-  "homepage": "https://github.com/Game-Corner/gamecorner.org#readme"
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
