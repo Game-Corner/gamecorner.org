@@ -1,8 +1,13 @@
 const { Client } = require('pg')
-const client = new Client()
 
-await client.connect()
+const con = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
 
-const res = await client.query('SELECT $1::text as message', ['Hello world!'])
-console.log(res.rows[0].message) // Hello world!
-await client.end()
+await client.connect();
+
+con.query(queryString, (err, res) => {
+  console.log(res);
+  await client.end();
+});
