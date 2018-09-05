@@ -7,7 +7,7 @@ const con = new Client({
 
 await client.connect();
 
-con.query(queryString, (err, res) => {
+con.query("SELECT username FROM users;", (err, res) => {
   console.log(res);
   await client.end();
 });
