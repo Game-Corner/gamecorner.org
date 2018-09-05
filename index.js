@@ -5,9 +5,9 @@ const con = new Client({
   ssl: true,
 });
 
-client.connect();
+await con.connect();
 
 con.query("SELECT username FROM users;", (err, res) => {
   console.log(res);
-  client.end();
+  await con.end();
 });
