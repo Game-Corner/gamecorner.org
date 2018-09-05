@@ -1,11 +1,13 @@
-const express = require('express'),
-  path = require('path');
+const { Client } = require('pg')
 
-new class extends express {
-  constructor() {
-    super();
+const con = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
 
-    this.use(express.static(path.join(__dirname, "/pages")));
-    this.listen(80);
-  }
-};
+await client.connect();
+
+con.query(queryString, (err, res) => {
+  console.log(res);
+  await client.end();
+});
