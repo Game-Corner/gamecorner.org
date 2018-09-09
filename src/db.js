@@ -6,7 +6,7 @@ const con = new Client({
 
 con.connect();
 
-function register(name, username, email, password) {
+function register(username, name, email, password) {
   con.query(`INSERT INTO users (name, username, email, password) VALUES (${name}, ${username}, ${email}, crypt(${password}, gen_salt('bf', 8)));`, (err, res) => {
     return res;
   });
@@ -17,6 +17,8 @@ function login(username, email, password) {
     return res;
   });
 }
+
+con.end();
 
 module.exports = {
   register,
