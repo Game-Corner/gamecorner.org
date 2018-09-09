@@ -17,3 +17,8 @@ function login(username, email, password) {
     return res;
   });
 }
+
+module.exports = {
+  register,
+  login
+}
