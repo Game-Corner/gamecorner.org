@@ -13,6 +13,7 @@ con.connect();
 
 con.query('SELECT * FROM users;', (err, res) => {
   console.log(res);
+  console.log(err);
 });
 
 con.end();
