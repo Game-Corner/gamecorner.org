@@ -29,7 +29,7 @@ function login(username, email, password) {
 
 con.end();
 
-module.exports = 
+module.exports = {
   login,
   register
 }
