@@ -7,7 +7,7 @@ const client = new Client({
 client.connect();
 
 function yay() {
-  client.query('SELECT name FROM users;', (err, res) => {
+  client.query('INSERT INTO users (name) VALUES (\'poop\');', (err, res) => {
     if (err) {
       return err.stack;
     } else {
