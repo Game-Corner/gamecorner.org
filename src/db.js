@@ -10,7 +10,7 @@ function yay() {
     if (err) {
       return err.stack;
     } else {
-      return res.rows[0];
+      return res;
     }
     client.end();
   });
