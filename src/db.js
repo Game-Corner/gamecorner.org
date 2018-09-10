@@ -29,6 +29,5 @@ function login(username, email, password) {
 con.end();
 
 module.exports = {
-  register,
   login
 }
