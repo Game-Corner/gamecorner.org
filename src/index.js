@@ -16,4 +16,6 @@ con.query('SELECT * FROM users;', (err, res) => {
   console.log(err);
 });
 
+console.log('oof');
+
 con.end();
