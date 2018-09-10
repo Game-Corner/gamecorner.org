@@ -1,5 +1,5 @@
 const db = require('./db');
-console.log(db.login());
+console.log(db.yay());
 
 /*
 const { Client } = require('pg')
