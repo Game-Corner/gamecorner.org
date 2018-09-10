@@ -28,6 +28,4 @@ function login(username, email, password) {
 
 con.end();
 
-module.exports = {
-  login
-}
+module.exports = login;
