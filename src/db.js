@@ -4,7 +4,7 @@ const client = new Client({
   ssl: true,
 });
 
-con.connect();
+client.connect();
 
 function yay() {
   client.query('SELECT name FROM users;', (err, res) => {
