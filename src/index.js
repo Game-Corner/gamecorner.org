@@ -12,8 +12,11 @@ const con = new Client({
 con.connect();
 
 con.query('INSERT INTO users (username) VALUES (\'yay\');', (err, res) => {
-  console.log(res);
-  console.log(err);
+  if (err) {
+    console.log(err.stack)
+  } else {
+    console.log(res.rows[0])
+  }
 });
 
 console.log('oof');
