@@ -8,9 +8,9 @@ client.connect();
 function yay() {
   client.query('INSERT INTO users (username) VALUES (\'yay\');', (err, res) => {
     if (err) {
-      return err.stack;
+      console.log(err.stack);
     } else {
-      return res.rows[0];
+      console.log(res.rows[0]);
     }
     client.end();
   });
