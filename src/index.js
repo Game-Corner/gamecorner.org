@@ -1,6 +1,6 @@
 /*	
-const db = require('./db');	const db = require('./db');
- console.log(db.login());	console.log(db.login());
+const db = require('./db');
+ console.log(db.login());
 */	
 
 const { Client } = require('pg')	
