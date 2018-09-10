@@ -1,10 +1,3 @@
-const { Client } = require('pg')
-const con = new Client()
+const db = require('./db');
 
-con.connect();
-
-con.query('SELECT name FROM users;', (err, res) => {
-  console.log(res);
-});
-
-con.end();
+console.log(db.login());
