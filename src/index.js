@@ -1,3 +1,3 @@
 const db = require('./db');
 
-console.log(db);
+console.log(db.login);
