@@ -1,3 +1,3 @@
 const db = require('./db');
 
-console.log(db.yay);
+console.log(db.yay());
