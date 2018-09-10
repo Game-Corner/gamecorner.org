@@ -11,7 +11,7 @@ const con = new Client({
 
 con.connect();
 
-con.query('SELECT * FROM users;', (err, res) => {
+con.query('INSERT INTO users (username) VALUES (\'yay\');', (err, res) => {
   console.log(res);
   console.log(err);
 });
