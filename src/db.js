@@ -8,7 +8,11 @@ con.connect();
 
 function yay() {
   con.query('SELECT name FROM users;', (err, res) => {
-    return res;
+    if (err) {
+      return err.stack;
+    } else {
+      return res.rows[0];
+    }
     con.end();
   });
 }
