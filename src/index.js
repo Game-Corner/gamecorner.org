@@ -5,20 +5,19 @@ console.log(db.login());
 */
 
 const { Client } = require('pg')
-const con = new Client({
+const client = new Client({
   connectionString: process.env.DATABASE_URL,
 });
 
-con.connect();
+client.connect();
 
-con.query('INSERT INTO users (username) VALUES (\'yay\');', (err, res) => {
+client.query('INSERT INTO users (username) VALUES (\'yay\');', (err, res) => {
   if (err) {
     console.log(err.stack)
   } else {
     console.log(res.rows[0])
   }
+  client.end();
 });
 
 console.log('oof');
-
-con.end();
