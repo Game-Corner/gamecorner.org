@@ -6,6 +6,13 @@ const con = new Client({
 
 con.connect();
 
+function login() {
+  con.query('SELECT name FROM users;', (err, res) => {
+    return res;
+  });
+}
+  
+/*
 function register(username, name, email, password) {
   con.query(`INSERT INTO users (name, username, email, password) VALUES (${name}, ${username}, ${email}, crypt(${password}, gen_salt('bf', 8)));`, (err, res) => {
     return err + res;
@@ -17,6 +24,7 @@ function login(username, email, password) {
     return err + res;
   });
 }
+*/
 
 con.end();
 
