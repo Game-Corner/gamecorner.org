@@ -6,30 +6,30 @@ const con = new Client({
 
 con.connect();
 
-function login() {
+function yay() {
   con.query('SELECT name FROM users;', (err, res) => {
     return res;
+    con.end();
   });
 }
   
 
 function register(username, name, email, password) {
   con.query(`INSERT INTO users (name, username, email, password) VALUES (${name}, ${username}, ${email}, crypt(${password}, gen_salt('bf', 8)));`, (err, res) => {
-    return err + res;
+    return res;
+    con.end();
   });
 }
-/*
 
 function login(username, email, password) {
   con.query(`SELECT * FROM users WHERE email = lower(${email}) OR username = lower(${username}) AND password = crypt(${password}, password);`, (err, res) => {
-    return err + res;
+    return res;
+    con.end();
   });
 }
-*/
-
-con.end();
 
 module.exports = {
   login,
+  yay,
   register
 }
