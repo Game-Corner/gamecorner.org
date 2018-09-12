@@ -1,38 +1,32 @@
 const { Client } = require('pg')
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
+  ssl: true,
 });
 
 client.connect();
 
-function yay() {
-  client.query('INSERT INTO users (username) VALUES (\'yay\');', (err, res) => {
-    if (err) {
-      console.log(err.stack);
-    } else {
-      console.log(res.rows[0]);
-    }
-    client.end();
-  });
-}
-  
-
 function register(username, name, email, password) {
-  client.query(`INSERT INTO users (name, username, email, password) VALUES (${name}, ${username}, ${email}, crypt(${password}, gen_salt('bf', 8)));`, (err, res) => {
-    return res;
+  var text = 'INSERT INTO users (name, username, email, password) VALUES ($1, $2, $3, crypt($4, gen_salt(\'bf\', 8)));';
+  var values = [name, username, email, password];
+  client.query(text, values, (err, res) => {
+    console.log(res);
     client.end();
   });
 }
 
 function login(username, email, password) {
-  client.query(`SELECT * FROM users WHERE email = lower(${email}) OR username = lower(${username}) AND password = crypt(${password}, password);`, (err, res) => {
-    return res;
+  var text = 'SELECT * FROM users WHERE email = lower($1) OR username = lower($2) AND password = crypt($3, password);';
+  var values = [email, username, password];
+  client.query(text, values, (err, res) => {
+    if (res) {
+      console.log(res);
+    }
     client.end();
   });
 }
 
 module.exports = {
   login,
-  yay,
   register
 }
