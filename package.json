@@ -10,8 +10,8 @@
     }
   ],
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "npm run build && node src/server/index.js"
+    "start": "node src/server/index.js",
+    "heroku-postbuild": "webpack --mode production"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
