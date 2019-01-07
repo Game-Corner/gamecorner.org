@@ -30,6 +30,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: "./pages/news.html"
     })
