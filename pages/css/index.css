@@ -10,7 +10,7 @@
 }
 .content {
   justify-content: center;
-  background-color: ;
+  background-color: #c1c1c1;
   flex-wrap: wrap;
   display: flex;
   margin: 20px 0px;
