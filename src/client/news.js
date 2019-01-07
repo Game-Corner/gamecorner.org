@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+import './news.css';
 
 function Repeat(props) {
   let items = [];
